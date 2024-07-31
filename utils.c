@@ -7,7 +7,7 @@
  */
 int _putchar(char c)
 {
-	return write(1, &c, 1);
+	return (write(1, &c, 1));
 }
 
 /**
@@ -19,12 +19,13 @@ int _puts(char *str)
 {
 	int count = 0;
 
-	while (*str) {
+	while (*str)
+	{
 		_putchar(*str++);
 		count++;
 	}
 
-	return count;
+	return (count);
 }
 
 /**
@@ -37,21 +38,25 @@ int _print_int(int n)
 	int count = 0;
 	unsigned int num;
 
-	if (n < 0) {
+	if (n < 0)
+	{
 		_putchar('-');
 		count++;
 		num = -n;
-	} else {
+	}
+	else
+	{
 		num = n;
 	}
 
-	if (num / 10) {
+	if (num / 10)
+	{
 		count += _print_int(num / 10);
 	}
 
 	_putchar((num % 10) + '0');
 	count++;
 
-	return count;
+	return (count);
 }
 

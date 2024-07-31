@@ -13,10 +13,13 @@ int _printf(const char *format, ...)
 
 	va_start(args, format);
 
-	for (p = format; *p != '\0'; p++) {
-		if (*p == '%') {
+	for (p = format; *p != '\0'; p++)
+	{
+		if (*p == '%')
+		{
 			p++;
-			switch (*p) {
+			switch (*p)
+			{
 				case 'c':
 					printed_chars += _putchar(va_arg(args, int));
 					break;
@@ -35,12 +38,14 @@ int _printf(const char *format, ...)
 					printed_chars += _putchar(*p);
 					break;
 			}
-		} else {
+		}
+		else
+		{
 			printed_chars += _putchar(*p);
 		}
 	}
 
 	va_end(args);
-	return printed_chars;
+	return (printed_chars);
 }
 
